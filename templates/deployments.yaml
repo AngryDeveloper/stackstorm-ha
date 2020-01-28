@@ -369,6 +369,9 @@ spec:
 #            path: /api/
 #            port: 443
 #          initialDelaySeconds: 3
+        env:
+        - name: ST2WEB_HTTPS
+          value: "1"
         envFrom:
         - configMapRef:
             name: {{ .Release.Name }}-st2-urls
