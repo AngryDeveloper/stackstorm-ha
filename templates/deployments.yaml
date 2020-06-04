@@ -882,6 +882,9 @@ spec:
         {{- if $.Values.secrets.st2.datastore_crypto_key }}
         checksum/datastore-key: {{ include (print $.Template.BasePath "/secrets_datastore_crypto_key.yaml") . | sha256sum }}
         {{- end }}
+        {{- if .annotations }}
+{{ toYaml .annotations | indent 8 }}
+        {{- end }}
     spec:
       imagePullSecrets:
       {{- if $.Values.enterprise.enabled }}
@@ -1042,6 +1045,9 @@ spec:
         checksum/ssh: {{ include (print $.Template.BasePath "/secrets_ssh.yaml") . | sha256sum }}
         {{- if $.Values.secrets.st2.datastore_crypto_key }}
         checksum/datastore-key: {{ include (print $.Template.BasePath "/secrets_datastore_crypto_key.yaml") . | sha256sum }}
+        {{- end }}
+        {{- if .Values.st2actionrunner.annotations }}
+{{ toYaml .Values.st2actionrunner.annotations | indent 8 }}
         {{- end }}
     spec:
       {{- if .Values.st2actionrunner.hostAliases }}
