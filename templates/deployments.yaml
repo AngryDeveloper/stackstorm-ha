@@ -880,7 +880,7 @@ spec:
         checksum/config: {{ include (print $.Template.BasePath "/configmaps_st2-conf.yaml") $ | sha256sum }}
         checksum/packs: {{ include (print $.Template.BasePath "/configmaps_packs.yaml") $ | sha256sum }}
         {{- if $.Values.secrets.st2.datastore_crypto_key }}
-        checksum/datastore-key: {{ include (print $.Template.BasePath "/secrets_datastore_crypto_key.yaml") . | sha256sum }}
+        checksum/datastore-key: {{ include (print $.Template.BasePath "/secrets_datastore_crypto_key.yaml") $ | sha256sum }}
         {{- end }}
         {{- if .annotations }}
 {{ toYaml .annotations | indent 8 }}
