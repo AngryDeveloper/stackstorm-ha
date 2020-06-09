@@ -28,7 +28,10 @@
 * Fix st2web ingress which should have been defined as an Integer instead of a String (#111) (by @erenatas)
 * Add an option to inject hostAliases in the st2actionrunner containers (#114)
 * Add support for Service Accounts (#117) (by @Vince-Chenal)
+<<<<<<< HEAD
 * Add an option to mount NFS volumes instead of using the `st2packs` image (#118) (by @AngryDevelopper)
+=======
+>>>>>>> inject-datastore-encryption-key
 
 ## v0.24.0
 * Fix st2web ingress to use `/` path by default instead of `/*`, useful for nginx ingress controller (#103) (by @erenatas)
